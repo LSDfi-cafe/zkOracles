@@ -1,0 +1,18 @@
+{
+    "entrypoints": [
+        {
+            "name": "v1",
+            "framework": "plonky2",
+            "baseDir": ".",
+            "buildCommand": "cargo run --release --bin v1 build && mv ./target/release/v1 ./build/v1",
+            "proveCommand": "./build/v1 prove input.json"
+        },
+        {
+            "name": "mock",
+            "framework": "rustx",
+            "baseDir": ".",
+            "buildCommand": "cargo run --release --bin mock build && mv ./target/release/mock ./build/mock",
+            "proveCommand": "./build/mock prove input.json"
+        }
+    ]
+}
